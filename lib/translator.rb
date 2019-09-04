@@ -41,6 +41,22 @@ end
 
 
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file_path, emoticon)
+
+arr1 = []
+  search = load_library(file_path).reduce({}) { | memo, (main_keys, values) |
+	find_emoticon = values.select { |key, value| key == emoticon }
+
+	arr1 << find_emoticon.values[0]
+
+memo = arr1[0]
+		if memo == nil
+			memo = "Sorry, that emoticon was not found"
+		end
+
+	memo
+	}
+# p arr1
+return search
+# p search
 end
