@@ -18,9 +18,14 @@ end
 
 def get_japanese_emoticon(file_path, emoticon)
   val1 = load_library(file_path).reduce({}) { |x, (y, z) |
-	# p z.has_key?(emoticon)
-	find = z.select { |k| k == emoticon }
-	find.values[0]
+		find = z.select { |k| k == emoticon
+
+		}
+x = find.values[0]
+if x == nil
+x = "Sorry, that emoticon was not found"
+end
+x
   }
 return val1
 end
