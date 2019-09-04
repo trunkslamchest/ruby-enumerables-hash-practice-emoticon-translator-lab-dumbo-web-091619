@@ -3,13 +3,15 @@ require 'yaml'
 def load_library(file_path)
   load_yaml = YAML.load_file(file_path)
 
-	arr1 = {}
-	arr2 = {}
-	load_yaml.reduce({}) { |x, (y, z)|
-	arr1[z[1]] = y
-	arr2[z[0]] = z[1]
+	japanese = {}
+	english = {}
+
+	load_yaml.reduce({}) { |memo, (meaning, emoticons)|
+	japanese[emoticons[1]] = meaning
+	english[emoticons[0]] = emoticons[1]
 	}
-hash = {:get_meaning => arr1, :get_emoticon => arr2}
+
+	hash = {:get_meaning => japanese, :get_emotion => english}
 
 return hash
 end
