@@ -11,7 +11,7 @@ def load_library(file_path)
 	english[emoticons[0]] = emoticons[1]
 	}
 
-	hash = {:get_meaning => japanese, :get_emotion => english}
+	hash = {:get_meaning => japanese, :get_emoticon => english}
 
 return hash
 end
