@@ -9,7 +9,7 @@ def load_library(file_path)
 	arr1[z[1]] = y
 	arr2[z[0]] = z[1]
 	}
-hash = {:get_meaning => arr1, :get_emotion => arr2}
+hash = {:get_meaning => arr1, :get_emoticon => arr2}
 
 return hash
 end
