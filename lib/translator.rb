@@ -16,8 +16,13 @@ def load_library(file_path)
 return hash
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file_path, emoticon)
+  val1 = load_library(file_path).reduce({}) { |x, (y, z) |
+	# p z.has_key?(emoticon)
+	find = z.select { |k| k == emoticon }
+	find.values[0]
+  }
+return val1
 end
 
 def get_english_meaning
